@@ -165,22 +165,43 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-  .entry {
-    width: 100%;
-    padding-left: 4rem;
-    padding-right: 1rem;
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
   }
 
-  .entry.left, .entry.right {
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #ccc;
+  }
+
+  .entry {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+
+  .entry.left,
+  .entry.right {
     left: 0;
     text-align: center;
   }
 
-  .timeline::before {
-    left: 20px;
-  }
-
   .dot {
-    left: 20px;
+    opacity: 0; 
+  }
+  .end-text{
+    font-size: 14px;
+    text-align: center;
+    margin: 50px 60px 0px;
   }
 }
